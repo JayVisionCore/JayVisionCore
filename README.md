@@ -1,6 +1,4 @@
-I AM SURE NO ONE WILL COME HERE AND IF YOU ARE
-HERE LET ME TELL YOU PLEASE STUDY SIN AND COS 
-THETA & EVERY 10-YOUR GRADUATION MATHEMATICS WILL
-MATTER HERE IF YOU WANT TO DEEPLEARN LIKE ME AND
-TRUST ME I AM NOR MATHEMATICS NERD JUST A GUY WHO'S
-REGRETTING FOR NOT STUDYING BUT THANK GOD I CAUGHT ON EARLY.......
+Hi, I'm Jay! I'm a passionate programmer with a love for deeplearn 
+Prodigy on the way
+if you got better idea feel free to discuss I am not mark Zuckerberg, I will work together
+wants to build something greater no one ever thought of

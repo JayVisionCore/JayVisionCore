@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<meta name="description" content="Kalaakar — Colorful, modern fashion for everyone. Shop Men, Women, Kids, and Accessories with a joyful, responsive experience.">
+	<title>Kalaakar — Colorful Fashion</title>
+	<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="/assets/css/styles.css">
+	<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128' viewBox='0 0 24 24'%3E%3Cpath fill='%23ff3d68' d='M12 2c2.8 0 4.7 1.3 5.9 3.8c1.2 2.6 1 5.4-.8 7.7L12 22l-5.1-8.5c-1.8-2.3-2-5.1-.8-7.7C7.3 3.3 9.2 2 12 2'/%3E%3C/svg%3E">
+</head>
+<body data-theme="light">
+	<header class="topbar">
+		<div class="container">
+			<div class="topbar__left">
+				<select id="languageSelect" aria-label="Select language">
+					<option value="en" selected>English</option>
+					<option value="hi">हिन्दी</option>
+				</select>
+				<select id="currencySelect" aria-label="Select currency">
+					<option value="INR" selected>INR ₹</option>
+					<option value="USD">USD $</option>
+					<option value="EUR">EUR €</option>
+				</select>
+			</div>
+			<div class="topbar__right">
+				<button id="orderTrackBtn" class="link">Track Order</button>
+				<button id="loginBtn" class="link">Sign in</button>
+			</div>
+		</div>
+	</header>
+
+	<nav class="navbar">
+		<div class="container navbar__inner">
+			<a class="logo" href="#" aria-label="Kalaakar home">
+				<span class="logo__mark">✺</span>
+				<span class="logo__text">Kalaakar</span>
+			</a>
+			<div class="nav__search">
+				<input id="searchInput" type="search" placeholder="Search for colors, styles, or products" aria-label="Search products" autocomplete="off">
+				<div id="searchAutocomplete" class="autocomplete" role="listbox" aria-label="Search suggestions"></div>
+			</div>
+			<ul class="nav__links" role="menubar">
+				<li role="none"><button class="navlink" data-category="Men" role="menuitem">Men</button></li>
+				<li role="none"><button class="navlink" data-category="Women" role="menuitem">Women</button></li>
+				<li role="none"><button class="navlink" data-category="Kids" role="menuitem">Kids</button></li>
+				<li role="none"><button class="navlink" data-category="Accessories" role="menuitem">Accessories</button></li>
+			</ul>
+			<div class="nav__actions">
+				<button id="wishlistBtn" class="iconbtn" aria-label="Open wishlist" title="Wishlist">
+					<span class="icon">❤</span>
+				</button>
+				<button id="cartBtn" class="iconbtn" aria-label="Open cart" title="Cart">
+					<span class="icon">🛒</span>
+					<span id="cartBadge" class="badge" aria-live="polite">0</span>
+				</button>
+			</div>
+		</div>
+	</nav>
+
+	<section class="hero">
+		<div class="container hero__inner">
+			<div class="hero__content">
+				<h1 id="heroTitle">Wear Your Colors</h1>
+				<p id="heroSubtitle">Bold. Joyful. Sustainable. Designed in India, loved everywhere.</p>
+				<div class="hero__cta">
+					<button class="btn btn--primary" data-category="Women">Shop Women</button>
+					<button class="btn btn--ghost" data-category="Men">Shop Men</button>
+				</div>
+			</div>
+			<div class="hero__art" aria-hidden="true">
+				<div class="blob b1"></div>
+				<div class="blob b2"></div>
+				<div class="blob b3"></div>
+			</div>
+		</div>
+	</section>
+
+	<section class="categories container" aria-label="Shop by category">
+		<div class="catgrid">
+			<button class="catcard" data-category="Men"><span>Men</span></button>
+			<button class="catcard" data-category="Women"><span>Women</span></button>
+			<button class="catcard" data-category="Kids"><span>Kids</span></button>
+			<button class="catcard" data-category="Accessories"><span>Accessories</span></button>
+		</div>
+	</section>
+
+	<main class="container layout">
+		<aside class="filters" aria-label="Filters">
+			<h3>Filters</h3>
+			<div class="filter">
+				<label>Category</label>
+				<div id="filterCategories" class="chips"></div>
+			</div>
+			<div class="filter">
+				<label>Size</label>
+				<div id="filterSizes" class="chips"></div>
+			</div>
+			<div class="filter">
+				<label>Color</label>
+				<div id="filterColors" class="swatches"></div>
+			</div>
+			<div class="filter">
+				<label for="priceRange">Max Price</label>
+				<input id="priceRange" type="range" min="299" max="7999" value="7999">
+				<div class="range__meta">
+					<span>₹299</span>
+					<span id="priceRangeValue">₹7999</span>
+				</div>
+			</div>
+			<div class="filter">
+				<label>Sort by</label>
+				<select id="sortSelect">
+					<option value="popularity">Popularity</option>
+					<option value="price-asc">Price: Low to High</option>
+					<option value="price-desc">Price: High to Low</option>
+					<option value="rating-desc">Top Rated</option>
+				</select>
+			</div>
+			<button id="clearFilters" class="btn btn--ghost full">Clear Filters</button>
+		</aside>
+
+		<section class="productlist" aria-live="polite">
+			<h2 id="productListTitle">Featured Products</h2>
+			<div id="productGrid" class="grid"></div>
+		</section>
+	</main>
+
+	<section class="creative container" id="creativeSection" aria-label="Design your own">
+		<div class="creative__head">
+			<h2>Design Your Style</h2>
+			<p>Draw, paint, or upload a picture. Imagine it. Wear it.</p>
+		</div>
+		<div class="creative__studio">
+			<canvas id="designCanvas" width="360" height="360" aria-label="Drawing canvas"></canvas>
+			<div class="studio__tools">
+				<div class="row">
+					<label>Brush</label>
+					<input id="brushSize" type="range" min="1" max="40" value="8">
+					<div id="colorPalette" class="palette"></div>
+				</div>
+				<div class="row">
+					<input id="uploadInput" type="file" accept="image/*">
+					<button id="clearCanvas" class="btn btn--ghost">Clear</button>
+					<button id="saveDesign" class="btn btn--primary">Save</button>
+				</div>
+			</div>
+		</div>
+		<div id="designGallery" class="creative__gallery" aria-label="Your saved designs"></div>
+	</section>
+
+	<footer class="footer">
+		<div class="container footer__inner">
+			<div>
+				<strong>Kalaakar</strong>
+				<p>Colorful fashion crafted with love.</p>
+			</div>
+			<ul>
+				<li><button class="link" id="openAdmin">Admin Dashboard</button></li>
+				<li><a class="link" href="#">Shipping & Returns</a></li>
+				<li><a class="link" href="#">Privacy</a></li>
+				<li><a class="link" href="#">Terms</a></li>
+			</ul>
+			<div>
+				<p>Made in 🇮🇳 with vibrant energy.</p>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Product Detail Modal -->
+	<dialog id="productModal" class="modal">
+		<div class="modal__body">
+			<button class="modal__close" data-close>✕</button>
+			<div class="modal__content">
+				<div class="gallery">
+					<img id="pdMain" src="" alt="" loading="lazy">
+					<div id="pdThumbs" class="thumbs"></div>
+				</div>
+				<div class="pd__info">
+					<h3 id="pdTitle"></h3>
+					<div class="pd__meta">
+						<span id="pdPrice"></span>
+						<span id="pdStock" class="stock"></span>
+						<div id="pdRating" class="rating" aria-label="Rating"></div>
+					</div>
+					<div class="pd__options">
+						<div id="pdColors" class="swatches"></div>
+						<div id="pdSizes" class="chips"></div>
+						<button id="openSizeChart" class="link">Size chart</button>
+					</div>
+					<div class="pd__actions">
+						<button id="addToCart" class="btn btn--primary">Add to cart</button>
+						<button id="addToWishlist" class="btn btn--ghost">Wishlist</button>
+					</div>
+					<div class="pd__desc" id="pdDesc"></div>
+					<div class="pd__reviews">
+						<h4>Reviews</h4>
+						<div id="reviewsList"></div>
+						<form id="reviewForm" class="reviewform">
+							<label>
+								<span>Rating</span>
+								<select id="reviewRating">
+									<option>5</option>
+									<option>4</option>
+									<option>3</option>
+									<option>2</option>
+									<option>1</option>
+								</select>
+							</label>
+							<label class="full">
+								<span>Comment</span>
+								<textarea id="reviewComment" rows="3" placeholder="Share your thoughts"></textarea>
+							</label>
+							<button class="btn btn--ghost" type="submit">Post Review</button>
+						</form>
+					</div>
+					<div class="pd__suggestions">
+						<h4>Customers also bought</h4>
+						<div id="suggestGrid" class="grid small"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</dialog>
+
+	<!-- Size Chart Modal -->
+	<dialog id="sizeChartModal" class="modal">
+		<div class="modal__body">
+			<button class="modal__close" data-close>✕</button>
+			<div class="modal__content">
+				<h3>Size Chart</h3>
+				<div class="sizechart">
+					<div><strong>XS</strong> 34-36" chest</div>
+					<div><strong>S</strong> 36-38" chest</div>
+					<div><strong>M</strong> 38-40" chest</div>
+					<div><strong>L</strong> 40-42" chest</div>
+					<div><strong>XL</strong> 42-44" chest</div>
+				</div>
+			</div>
+		</div>
+	</dialog>
+
+	<!-- Cart Drawer -->
+	<aside id="cartDrawer" class="drawer" aria-label="Shopping cart" aria-hidden="true">
+		<div class="drawer__head">
+			<h3>My Cart</h3>
+			<button class="drawer__close" data-close>✕</button>
+		</div>
+		<div id="cartItems" class="drawer__content"></div>
+		<div class="drawer__foot">
+			<div class="cart__summary">
+				<input id="couponInput" type="text" placeholder="Coupon code">
+				<button id="applyCoupon" class="btn btn--ghost">Apply</button>
+			</div>
+			<div class="cart__totals">
+				<div><span>Subtotal</span><strong id="subtotal"></strong></div>
+				<div><span>Discount</span><strong id="discount"></strong></div>
+				<div><span>Total</span><strong id="grandTotal"></strong></div>
+			</div>
+			<button id="checkoutBtn" class="btn btn--primary full">Checkout</button>
+		</div>
+	</aside>
+
+	<!-- Checkout Modal (Mock Payment) -->
+	<dialog id="checkoutModal" class="modal">
+		<div class="modal__body">
+			<button class="modal__close" data-close>✕</button>
+			<div class="modal__content checkout">
+				<h3>Checkout</h3>
+				<div class="checkout__grid">
+					<section>
+						<h4>Shipping Address</h4>
+						<input id="addrName" placeholder="Full name">
+						<input id="addrLine" placeholder="Address line">
+						<input id="addrCity" placeholder="City">
+						<input id="addrPin" placeholder="PIN code">
+					</section>
+					<section>
+						<h4>Payment</h4>
+						<div class="payopts">
+							<label><input type="radio" name="pay" value="upi" checked> UPI</label>
+							<label><input type="radio" name="pay" value="card"> Card</label>
+							<label><input type="radio" name="pay" value="netbanking"> Netbanking</label>
+							<label><input type="radio" name="pay" value="wallet"> Wallet</label>
+						</div>
+						<button id="payNow" class="btn btn--primary">Pay Now</button>
+						<p class="muted">Mock: integrates with Razorpay/Stripe with keys.</p>
+					</section>
+				</div>
+			</div>
+		</div>
+	</dialog>
+
+	<!-- Login / Profile Modal -->
+	<dialog id="loginModal" class="modal">
+		<div class="modal__body">
+			<button class="modal__close" data-close>✕</button>
+			<div class="modal__content">
+				<h3>Welcome to Kalaakar</h3>
+				<div class="social">
+					<button class="btn full" data-social="google">Continue with Google</button>
+					<button class="btn full" data-social="facebook">Continue with Facebook</button>
+					<button class="btn full" data-social="apple">Continue with Apple</button>
+				</div>
+				<div class="profile" id="profileArea" hidden>
+					<h4>Your Account</h4>
+					<div id="orderHistory"></div>
+					<button id="logoutBtn" class="btn btn--ghost">Logout</button>
+				</div>
+			</div>
+		</div>
+	</dialog>
+
+	<!-- Order Tracking Modal -->
+	<dialog id="trackModal" class="modal">
+		<div class="modal__body">
+			<button class="modal__close" data-close>✕</button>
+			<div class="modal__content">
+				<h3>Track your order</h3>
+				<input id="trackInput" placeholder="Enter Order ID">
+				<button id="trackNow" class="btn btn--primary">Track</button>
+				<div id="trackResult" class="track__result"></div>
+			</div>
+		</div>
+	</dialog>
+
+	<!-- Admin Dashboard (Mock) -->
+	<dialog id="adminModal" class="modal">
+		<div class="modal__body">
+			<button class="modal__close" data-close>✕</button>
+			<div class="modal__content">
+				<h3>Admin Dashboard</h3>
+				<p class="muted">Update order statuses, handle refunds, manage shipping (mock).</p>
+				<div id="adminOrders" class="admin__orders"></div>
+			</div>
+		</div>
+	</dialog>
+
+	<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js" defer></script>
+	<script src="/assets/js/app.js" defer></script>
+</body>
+</html>
+

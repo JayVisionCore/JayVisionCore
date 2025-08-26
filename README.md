@@ -6,7 +6,7 @@
 
 - 🔭 I’m currently working on my own startup **Vision_intelligence.dlx**
 
-- 🌱 I’m currently learning **Java**
+- 🌱 I’m currently learning **Java** **c++**
 
 - 👯 I’m looking to collaborate on **Instagram @unfollowedbyjay**
 

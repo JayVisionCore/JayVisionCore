@@ -16,7 +16,7 @@
 
 - 📫 How to reach me **On Instagram @unfollowedbyjay**
 
-- ⚡ Fun fact **I loved a girl once in school days( funfact ended now laugh)**
+- ⚡ Fun fact **No fun here just grind hard MF**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">

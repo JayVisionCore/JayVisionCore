@@ -6,7 +6,7 @@ I build **AI-powered, scalable, and impact-driven products** that solve real-wor
 
 💡 Founder of:
 - ViSion_intelligence.dlx
-
+- ☝even if it didnt succeed I'll still have the skills which you don't MF
 📍 Currently working on gig marketplaces, AI learning tools, and no-code ecosystems.
 
 ---

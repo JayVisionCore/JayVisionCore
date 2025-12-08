@@ -31,4 +31,4 @@ I build **AI-powered, scalable, and impact-driven products** that solve real-wor
 ---
 
 ## ✨ Fun Fact
-I believe AI + Human Creativity can solve 90% of real-world problems.
+AI can scale businesses. Creativity can scale humanity.

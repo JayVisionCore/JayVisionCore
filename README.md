@@ -20,10 +20,6 @@ I build **AI-powered, scalable, and impact-driven products** that solve real-wor
 
 ---
 
-## 📊 GitHub Stats
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=JayViSionCore&show_icons=true&theme=radical)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=jayViSionCore&layout=compact&theme=radical)
 
 ---
 

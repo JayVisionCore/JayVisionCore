@@ -19,11 +19,7 @@ I build **AI-powered, scalable, and impact-driven products** that solve real-wor
 - **Other:** REST APIs, Webhooks, Automation
 
 ---
-
-
 ---
-
-
 ---
 
 ## ✨ Fun Fact

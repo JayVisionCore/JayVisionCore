@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Myntra Clone - Listing</title>
+  <link rel="stylesheet" href="/styles/reset.css" />
+  <link rel="stylesheet" href="/styles/global.css" />
+</head>
+<body>
+  <header id="site-header"></header>
+  <main id="app" class="container">
+    <section class="filters">
+      <input id="search" placeholder="Search for products, brands and more" />
+      <select id="sort">
+        <option value="relevance">Relevance</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="rating-desc">Customer Rating</option>
+        <option value="new">New Arrivals</option>
+      </select>
+      <div class="filters__chips" id="chips"></div>
+    </section>
+    <section class="listing">
+      <aside class="sidebar">
+        <h3>Filters</h3>
+        <div class="filter-group">
+          <h4>Category</h4>
+          <div id="filter-category"></div>
+        </div>
+        <div class="filter-group">
+          <h4>Brand</h4>
+          <div id="filter-brand"></div>
+        </div>
+        <div class="filter-group">
+          <h4>Price</h4>
+          <div id="filter-price"></div>
+        </div>
+        <div class="filter-group">
+          <h4>Rating</h4>
+          <div id="filter-rating"></div>
+        </div>
+      </aside>
+      <section class="listing__grid" id="product-grid"></section>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="/scripts/lib/dom.js" defer></script>
+  <script src="/scripts/lib/storage.js" defer></script>
+  <script src="/scripts/data/products.js" defer></script>
+  <script src="/scripts/app/render-common.js" defer></script>
+  <script src="/scripts/pages/listing.js" defer></script>
+</body>
+</html>
